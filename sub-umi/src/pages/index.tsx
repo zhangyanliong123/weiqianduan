@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, useRequest } from 'umi';
-import { login } from '@/api/login.ts';
-import Img from './yay.jpg';
+import { login } from '@/api/login';
+import Img from '@/pages/yay.jpg';
 import styles from './index.less';
 
 const Data = () => {

@@ -9,9 +9,11 @@ export default defineConfig({
     { path: '/login', component: '@/pages/login' },
     { path: '/vue', microApp: 'sub-vue' },
     { path: '/react', microApp: 'sub-react' },
+    { path: '/umi', microApp: 'sub-umi' },
   ],
   fastRefresh: {},
   qiankun: {
+    // 运行时注册子应用
     master: {
       apps: [
         {
@@ -25,6 +27,14 @@ export default defineConfig({
         {
           name: 'sub-react',
           entry: '//localhost:8082',
+          props: {
+            username: 'liz',
+            role: 'demander'
+          }
+        },
+        {
+          name: 'sub-umi',
+          entry: '//localhost:8083',
           props: {
             username: 'liz',
             role: 'demander'
@@ -50,6 +60,12 @@ export default defineConfig({
       target: 'http://localhost:8082',
       pathRewrite: {
         '/subReactApi': '/'
+      }
+    },
+    '/subUmiApi': {
+      target: 'http://localhost:8083',
+      pathRewrite: {
+        '/subUmiApi': '/'
       }
     },
   }

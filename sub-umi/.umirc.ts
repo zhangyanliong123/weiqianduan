@@ -9,6 +9,9 @@ export default defineConfig({
     { path: '/login', component: '@/pages/login' },
   ],
   fastRefresh: {},
+  qiankun: {
+    slave: {}
+  },
   proxy: {
     '/api': {
       target: 'http://localhost:4045',

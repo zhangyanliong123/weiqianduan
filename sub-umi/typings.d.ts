@@ -8,3 +8,7 @@ declare module '*.svg' {
   const url: string;
   export default url;
 }
+
+declare interface window {
+  __POWERED_BY_QIANKUN__: string | undefined;
+}
